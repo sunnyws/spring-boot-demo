@@ -9,24 +9,8 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/acp_user_center?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT&allowPublicKeyRetrieval=true
     username: root
     password: ahcccrjb
-  redis:
-    database: 10
-    host: 127.0.0.1
-    port: 6379
-    password: ''
-    jedis:
-      pool:
-        max-active: 100
-        max-idle: 3
-        max-wait: -1
-        min-idle: 0
-    timeout: 10000
 swagger:
   enabled: true
-logging:
-  level:
-    dict.mapper: debug
-  config: classpath:logback-spring.xml
 mybatis-plus:
   type-aliases-package: dict.entity
-  mapper-locations: classpath*:com/sunnyws/dict/mapper/**/*.xml
+  mapper-locations: classpath*:com/sunnyws/log/mapper/**/*.xml
