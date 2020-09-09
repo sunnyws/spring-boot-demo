@@ -4,12 +4,12 @@ package com.sunnyws.log.annotation;
 import java.lang.annotation.*;
 import com.sunnyws.log.enums.BusinessType;
 
-/**
- * 自定义操作日志记录注解
- * 
- * @author ruoyi
- *
- */
+/*
+* @Description //TODO
+* @Author qinlang
+* @Date 10:45 2020/9/9
+**/
+
 @Target({ ElementType.PARAMETER, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented

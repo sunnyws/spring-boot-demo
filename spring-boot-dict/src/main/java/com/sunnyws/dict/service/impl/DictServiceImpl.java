@@ -1,5 +1,6 @@
 package com.sunnyws.dict.service.impl;
 
+import com.sunnyws.dict.constant.CacheConstant;
 import com.sunnyws.dict.entity.DictEntity;
 import com.sunnyws.dict.mapper.DictMapper;
 import com.sunnyws.dict.service.DictService;
@@ -30,7 +31,7 @@ public class DictServiceImpl extends ServiceImpl<DictMapper, DictEntity> impleme
      * @return
      */
     @Override
-    @Cacheable(value = CommonConstant.DICT_CACHE,key = "#code+':'+#key")
+    @Cacheable(value = CacheConstant.DICT_CACHE,key = "#code+':'+#key")
     public String queryDictTextByKey(String code, String key){
         log.info("无缓存时调用");
         return dictMapper.queryDictTextByKey(code,key);

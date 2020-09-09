@@ -90,6 +90,8 @@ public class LogAspect {
             }
 
             operLog.setOperUrl(ServletUtils.getRequest().getRequestURI());
+
+            //获取请求用户
             HttpServletRequest request = ServletUtils.getRequest();
             String username = request.getHeader(CacheConstants.DETAILS_USERNAME);
             if (StringUtils.isNotBlank(username)){

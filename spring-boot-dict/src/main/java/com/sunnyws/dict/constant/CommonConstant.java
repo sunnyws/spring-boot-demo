@@ -15,11 +15,6 @@ public interface CommonConstant {
 
     public static final Integer SC_NO_AUTHZ=510;
 
-    /**
-     * 字典缓存key
-     */
-    public static final String DICT_CACHE = "cache:dict";
-
 
     /**
      * 字典翻译文本后缀

@@ -1,6 +1,8 @@
 package com.sunnyws.dict.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.sunnyws.dict.annotation.Dict;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,7 +23,7 @@ public class UserEntity {
     /**
      * 主键id
      */
-    @TableField(value = "id")
+    @TableId(type = IdType.ID_WORKER_STR)
     @ApiModelProperty(value = "主键id")
     private String id;
 
