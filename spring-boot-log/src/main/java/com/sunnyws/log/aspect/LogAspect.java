@@ -80,10 +80,14 @@ public class LogAspect {
             SysOperLog operLog = new SysOperLog();
             operLog.setStatus(BusinessStatus.SUCCESS.ordinal());
             // 请求的地址
-            String ip = IpUtils.getIpAddr(ServletUtils.getRequest());
+            String ip = IpUtils.getRemoteIP(ServletUtils.getRequest());
             operLog.setOperIp(ip);
+            String operatorType = IpUtils.getOsAndBrowserInfo(ServletUtils.getRequest());
+            operLog.setOperatorType(operatorType);
             // 返回参数
-            operLog.setJsonResult(JSON.toJSONString(jsonResult));
+            if(controllerLog.isSaveReponseData()){
+                operLog.setJsonResult(JSON.toJSONString(jsonResult));
+            }
 
             operLog.setOperUrl(ServletUtils.getRequest().getRequestURI());
             HttpServletRequest request = ServletUtils.getRequest();
@@ -105,7 +109,6 @@ public class LogAspect {
             // 处理设置注解上的参数
             getControllerMethodDescription(joinPoint, controllerLog, operLog);
             //异步保存数据库
-            System.out.println(operLog);
             asyncLogService.saveSysLog(operLog);
         }catch (Exception exp){
             // 记录本地异常日志
@@ -127,10 +130,7 @@ public class LogAspect {
         operLog.setBusinessType(log.businessType().ordinal());
         // 设置标题
         operLog.setTitle(log.title());
-        // 设置操作人类别
-        operLog.setOperatorType(log.operatorType().ordinal());
         // 是否需要保存request，参数和值
-        System.out.println(log.isSaveRequestData());
         if (log.isSaveRequestData()){
             // 获取参数的信息，传入到数据库中。
             setRequestValue(joinPoint, operLog);

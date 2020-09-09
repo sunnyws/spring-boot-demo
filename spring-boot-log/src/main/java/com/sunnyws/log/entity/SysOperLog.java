@@ -1,6 +1,8 @@
 package com.sunnyws.log.entity;
 
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -16,7 +18,8 @@ public class SysOperLog implements Serializable {
     private static final long serialVersionUID = 1L;
 
 
-    private Long operId;
+    @TableId(value = "oper_id",type = IdType.UUID)
+    private String operId;
 
     /** 操作模块 */
     private String title;
@@ -33,8 +36,8 @@ public class SysOperLog implements Serializable {
     /** 请求方式 */
     private String requestMethod;
 
-    /** 操作类别（0其它 1后台用户 2手机端用户） */
-    private Integer operatorType;
+    /** 操作类别 **/
+    private String operatorType;
 
     /** 操作人员 */
     private String operName;

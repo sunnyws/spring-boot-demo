@@ -44,6 +44,7 @@ public class SysOperLogController {
      */
     @ApiOperation(value = "日志表-分页列表查询", notes = "日志表-分页列表查询")
     @GetMapping(value = "/list")
+    @Log(title = "日志查询",businessType = BusinessType.OTHER,isSaveReponseData = false)
     public Result<IPage<SysOperLog>> queryPageList(UserEntity user,
                                                    @RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
                                                    @RequestParam(name="pageSize", defaultValue="10") Integer pageSize) {
@@ -105,8 +106,8 @@ public class SysOperLogController {
     @PostMapping(value = "/delete")
     public Result<SysOperLog> delete(@RequestParam(name="id",required=true) String id) {
         Result<SysOperLog> result = new Result<SysOperLog>();
-        SysOperLog user = sysOperLogService.getById(id);
-        if(user==null) {
+        SysOperLog operLog = sysOperLogService.getById(id);
+        if(operLog==null) {
             result.error500("未找到对应实体");
         }else {
             boolean ok =  sysOperLogService.removeById(id);

@@ -1,6 +1,8 @@
 package com.sunnyws.log.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -22,6 +24,7 @@ public class UserEntity {
      */
     @TableField(value = "id")
     @ApiModelProperty(value = "主键id")
+    @TableId(value = "id",type = IdType.UUID)
     private String id;
 
 
