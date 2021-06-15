@@ -81,7 +81,7 @@ public class RedisConfig {
 
 
         RedisCacheManager cacheManager = RedisCacheManager.builder(RedisCacheWriter.lockingRedisCacheWriter(factory))
-                                                            .cacheDefaults(redisCacheConfiguration.entryTtl(Duration.ofHours(6)))
+                                                            .cacheDefaults(redisCacheConfiguration.entryTtl(Duration.ZERO))
                                                             .withInitialCacheConfigurations(configMap)
                                                             .transactionAware().build();
         return cacheManager;
