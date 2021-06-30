@@ -17,21 +17,21 @@ public @interface Log {
     /**
      * 模块
      */
-    public String title() default "";
+    String title() default "";
 
     /**
      * 功能
      */
-    public BusinessType businessType() default BusinessType.OTHER;
+    BusinessType businessType() default BusinessType.OTHER;
 
 
     /**
      * 是否保存请求的参数
      */
-    public boolean isSaveRequestData() default true;
+    boolean isSaveRequestData() default true;
 
     /**
      * 是否保存返回的参数
      */
-    public boolean isSaveReponseData() default true;
+    boolean isSaveReponseData() default true;
 }

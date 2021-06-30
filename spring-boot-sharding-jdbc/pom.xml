@@ -4,9 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.sunnyws</groupId>
-    <artifactId>spring-boot-dict</artifactId>
+    <groupId>org.example</groupId>
+    <artifactId>spring-boot-sharding-jdbc</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -16,11 +18,9 @@
 
     <properties>
         <mysql.version>8.0.11</mysql.version>
-        <mybatis-plus.version>3.1.2</mybatis-plus.version>
-        <druid.version>1.1.17</druid.version>
+        <mybatis-plus.version>3.4.1</mybatis-plus.version>
+        <druid.version>1.1.22</druid.version>
         <swagger.version>2.1.5-RELEASE</swagger.version>
-        <commons.version>2.6</commons.version>
-        <fastjson.version>1.2.60</fastjson.version>
     </properties>
 
     <dependencies>
@@ -28,11 +28,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <!--aop-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <!-- Lombok -->
         <dependency>
@@ -51,6 +46,11 @@
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>${druid.version}</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba</groupId>-->
+<!--            <artifactId>druid</artifactId>-->
+<!--            <version>1.1.22</version>-->
+<!--        </dependency>-->
         <!--mysql-->
         <dependency>
             <groupId>mysql</groupId>
@@ -58,33 +58,37 @@
             <version>${mysql.version}</version>
             <scope>runtime</scope>
         </dependency>
-        <!-- Redis -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-pool2</artifactId>
-        </dependency>
         <!-- Swagger API文档 -->
         <dependency>
             <groupId>com.battcn</groupId>
             <artifactId>swagger-spring-boot-starter</artifactId>
             <version>${swagger.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>guava</artifactId>
+                    <groupId>com.google.guava</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
-        <!--commonns-->
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>${commons.version}</version>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.7.2</version>
         </dependency>
-        <!-- json -->
+        <!--shardingsphere-->
+        <!-- for spring boot -->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
+            <groupId>org.apache.shardingsphere</groupId>
+            <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+            <version>4.1.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.6</version>
+        </dependency>
+
+
     </dependencies>
 
 
@@ -108,7 +112,4 @@
             </resource>
         </resources>
     </build>
-
-
-
 </project>

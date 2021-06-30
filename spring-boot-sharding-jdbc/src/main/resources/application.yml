@@ -1,0 +1,44 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+#mybatis
+mybatis-plus:
+  type-aliases-package: com.sunnyws.sharding.entity
+  mapper-locations: classpath*:com/sunnyws/sharding/mapper/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+spring:
+  shardingsphere:
+    datasource:
+      names: master,slave #数据源名称
+      master:      #配置第一个数据源  主库  写
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT&allowPublicKeyRetrieval=true
+        username: root
+        password: root
+      slave:      #配置第二个数据源  从库  读
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://39.96.221.178:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT&allowPublicKeyRetrieval=true
+        username: root
+        password: root
+    sharding:
+      master-slave-rules:
+        ds0:
+          master-data-source-name: master  #主库 写
+          slave-data-source-names: slave   #从库 读
+      tables: #分表配置
+        ybds_camera_face_record:  #表名
+          # 配置分表策略
+          actual-data-nodes: ds0.ybds_camera_face_record_20210$->{1..9},ds0.ybds_camera_face_record_2021$->{10..12}
+          table-strategy:
+            standard:  #配合Standard 自定义RangeShardingAlgorithm  PreciseShardingAlgorithm
+              sharding-column: snap_time   # 分片键
+              precise-algorithm-class-name: com.sunnyws.sharding.config.TableShardingAlgorithm # 实现类的完全限定类名
+              range-algorithm-class-name: com.sunnyws.sharding.config.TableRangeShardingAlgorithm
+    #展示路由后的sql
+    props:
+      sql:
+        show: true
