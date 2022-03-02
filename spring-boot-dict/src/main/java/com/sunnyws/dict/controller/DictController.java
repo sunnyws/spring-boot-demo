@@ -41,8 +41,8 @@ public class DictController {
     @ApiOperation(value = "字典表-分页列表查询", notes = "字典表-分页列表查询")
     @GetMapping(value = "/list")
     public Result<IPage<DictEntity>> queryPageList(DictEntity dict,
-                                                   @RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
-                                                   @RequestParam(name="pageSize", defaultValue="10") Integer pageSize) {
+												   @RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
+												   @RequestParam(name="pageSize", defaultValue="10") Integer pageSize) {
         Result<IPage<DictEntity>> result = new Result<IPage<DictEntity>>();
 		QueryWrapper<DictEntity> queryWrapper = new QueryWrapper<DictEntity>();
         Page<DictEntity> page = new Page<DictEntity>(pageNo, pageSize);

@@ -45,9 +45,9 @@ public class UserController {
     @ApiOperation(value = "用户表-分页列表查询", notes = "用户表-分页列表查询")
     @GetMapping(value = "/list")
     public Result<IPage<UserEntity>> queryPageList(UserEntity user,
-												   @RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
-												   @RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
-												   HttpServletRequest req) {
+                                                   @RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
+                                                   @RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
+                                                   HttpServletRequest req) {
         Result<IPage<UserEntity>> result = new Result<IPage<UserEntity>>();
 		QueryWrapper<UserEntity> queryWrapper = new QueryWrapper<UserEntity>();
 		Page<UserEntity> page = new Page<UserEntity>(pageNo, pageSize);

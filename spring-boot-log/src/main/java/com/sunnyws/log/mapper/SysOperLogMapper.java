@@ -2,7 +2,6 @@ package com.sunnyws.log.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.sunnyws.log.entity.SysOperLog;
-import com.sunnyws.log.entity.UserEntity;
 
 
 /*

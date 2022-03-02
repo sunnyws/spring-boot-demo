@@ -1,0 +1,16 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /
+license:
+  #证书subject
+  subject: licenseSubject
+  #私钥别称
+  publicAlias: publicCert
+  #访问私钥库的密码
+  storePass: a123456
+  #证书路径
+  licensePath: classpath:license.lic
+  #私钥库存储路径
+  publicKeysStorePath: classpath:publicCerts.keystore
+

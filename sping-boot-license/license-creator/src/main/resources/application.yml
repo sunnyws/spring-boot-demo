@@ -1,0 +1,22 @@
+server:
+  port: 8066
+  servlet:
+    context-path: /
+spring:
+  mvc:
+    format:
+      date: yyyy-MM-dd HH:mm:ss
+license:
+  #证书subject
+  subject: licenseSubject
+  #私钥别称
+  privateAlias: privateKey
+  #私钥密码（需要妥善保管，不能让使用者知道）
+  keyPass: chinaictc@123456
+  #访问私钥库的密码
+  storePass: chinaictc@123456
+  #证书生成路径
+  licensePath: /home/chinaictc/license
+  #私钥库存储路径
+  privateKeysStorePath: privateKeys.keystore
+

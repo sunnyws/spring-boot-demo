@@ -3,7 +3,6 @@ package com.sunnyws.job.properties;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
-import org.springframework.stereotype.Component;
 
 /*
 * @Description //TODO

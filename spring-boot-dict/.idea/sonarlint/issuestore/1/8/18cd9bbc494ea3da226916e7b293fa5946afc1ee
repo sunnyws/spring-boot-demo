@@ -1,0 +1,10 @@
+
+o
+java:S3776A"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(Çæþ…8‘Ã¸á´.
+E
+java:S1066C"/Merge this if statement with the enclosing one.(äãñ‡
+]	java:S125a"<This block of commented-out lines of code should be removed.(×²øýÿÿÿÿ8¼Îèÿ¸.
+—
+java:S1186*"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ýÐô÷
+b
+java:S3252N"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(ŒÏè 8–ØÞÚ´.

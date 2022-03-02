@@ -27,7 +27,7 @@ public class RocketMQMessageSenderServiceImpl implements RocketMQMessageSenderSe
     @Override
     public void send(MqMsg mqMsg) {
 //        log.info("send发送消息到mqMsg={}", mqMsg);
-        rocketMQTemplate.send(mqMsg.getTopic() + ":" + mqMsg.getTags(),
+        rocketMQTemplate.send(mqMsg.getTopic(),
                 MessageBuilder.withPayload(mqMsg).build());
 
     }

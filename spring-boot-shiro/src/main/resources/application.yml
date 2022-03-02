@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+chinaictc:
+  #登录获取code地址
+  login_url : "http://198.168.31.226:8000/oauth/authorize"
+  #获取token地址
+  token_url: "http://198.168.31.226:8000/oauth/token"
+  #客户端相关标识，请从认证服务器申请
+  client_id: "	1272348122437181442	"
+  #  回调地址
+  redirect_uri : "http://198.168.31.226:3000/oauth"
+  #  一些固定的请求参数
+  client_secret: '123456'
+  scope: "All"
+  response_type: "code"
+  grant_type : "authorization_code"

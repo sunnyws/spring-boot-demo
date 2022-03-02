@@ -18,8 +18,6 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
-import static java.util.Collections.singletonMap;
-
 /**
  * - @Description:  RedisConfig
  * - @Author qinlang

@@ -1,0 +1,21 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: spring-boot-currentlimit
+  cloud:
+    sentinel:
+      transport:
+        #控制台地址
+        dashboard: 198.168.31.227:8030
+        port: 8917
+        clientIp: 192.168.151.126
+      eager: true
+management:
+  # 端点检查（健康检查）
+  endpoints:
+    web:
+      exposure:
+        include: "*"

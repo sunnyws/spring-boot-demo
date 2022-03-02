@@ -12,13 +12,13 @@ import org.springframework.stereotype.Component;
  * - @Version 1.0
  **/
 @Component
-@RocketMQMessageListener(topic = "test_topic",consumerGroup = "test_consumer_group",selectorExpression = "test_tag")
+@RocketMQMessageListener(topic = "test_topic",consumerGroup = "test_consumer_group2",selectorExpression = "test_tag2")
 @Slf4j
-public class TestConsumer implements RocketMQListener<String> {
+public class TestConsumerTopic2 implements RocketMQListener<String> {
 
 
     @Override
     public void onMessage(String msg) {
-        log.info("消费：{}",msg);
+        log.info("消费带test_tag2：{}",msg);
     }
 }

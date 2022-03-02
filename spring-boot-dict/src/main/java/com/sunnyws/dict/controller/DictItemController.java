@@ -57,7 +57,8 @@ public class DictItemController {
     
 
     /**
-    * 通过id查询
+    * 通过id查询+.
+	 *
     * @param id
     * @return
     */

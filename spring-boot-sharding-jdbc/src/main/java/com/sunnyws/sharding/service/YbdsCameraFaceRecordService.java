@@ -1,10 +1,8 @@
 package com.sunnyws.sharding.service;
 
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.sunnyws.sharding.entity.YbdsCameraFaceRecord;
-import org.apache.ibatis.annotations.Param;
 
 
 /**

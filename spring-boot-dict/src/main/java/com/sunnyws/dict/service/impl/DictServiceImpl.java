@@ -1,10 +1,9 @@
 package com.sunnyws.dict.service.impl;
 
-import com.sunnyws.dict.constant.CacheConstant;
 import com.sunnyws.dict.entity.DictEntity;
-import com.sunnyws.dict.mapper.DictMapper;
 import com.sunnyws.dict.service.DictService;
-import com.sunnyws.dict.constant.CommonConstant;
+import com.sunnyws.dict.constant.CacheConstant;
+import com.sunnyws.dict.mapper.DictMapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

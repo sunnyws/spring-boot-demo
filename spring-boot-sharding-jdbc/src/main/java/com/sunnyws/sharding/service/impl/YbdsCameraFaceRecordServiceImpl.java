@@ -1,6 +1,5 @@
 package com.sunnyws.sharding.service.impl;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.sunnyws.sharding.entity.YbdsCameraFaceRecord;
 import com.sunnyws.sharding.mapper.YbdsCameraFaceRecordMapper;
