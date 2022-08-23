@@ -18,6 +18,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * XxlJob开发示例（Bean模式）
@@ -33,7 +35,22 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class SampleXxlJob {
 
+    /** 车牌号码验证 */
+    private static final String V_CPHM = "^([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[a-zA-Z](([DF]((?![IO])[a-zA-Z0-9](?![IO]))[0-9]{4})|([0-9]{5}[DF]))|[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1})$";
 
+    public static final String V_SIX_POINT = "^[0-9]+(.[0-9]{6})?$";
+    public static final String V_IS_POINT = "(\\d+\\.\\d+)";
+
+
+    public static void main(String[] args) {
+        System.out.println((match(V_IS_POINT,"37.123596")));
+    }
+
+    private static boolean match(String regex, String str) {
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(str);
+        return matcher.matches();
+    }
     /**
      * 1、简单任务示例（Bean模式）
      */

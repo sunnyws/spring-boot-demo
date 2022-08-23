@@ -11,6 +11,3 @@ spring:
     password: root
 swagger:
   enabled: true
-mybatis-plus:
-  type-aliases-package: com.sunnyws.excel.entity
-  mapper-locations: classpath*:com/sunnyws/excel/mapper/**/*.xml

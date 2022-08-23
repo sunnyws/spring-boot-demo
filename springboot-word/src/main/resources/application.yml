@@ -6,12 +6,12 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://198.168.31.221:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://198.168.31.221:3306/chinaictc_sc_common?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT&allowPublicKeyRetrieval=true
     username: root
     password: ahcccrjb
   redis:
     database: 10
-    host: 127.0.0.1
+    host: 198.168.31.221
     port: 6379
     password: ''
     jedis:
@@ -22,5 +22,5 @@ spring:
         min-idle: 0
     timeout: 10000
 mybatis-plus:
-  type-aliases-package: dict.entity
-  mapper-locations: classpath*:com/sunnyws/dict/mapper/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
